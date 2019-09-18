@@ -1,6 +1,6 @@
 import React, { useState, Fragment, useEffect } from "react";
 import { connect } from "react-redux";
-import { Link, withRouter } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import { createProfile, getCurrentProfile } from "../../actions/profile";
 
 const EditProfile = ({
@@ -44,7 +44,22 @@ const EditProfile = ({
       instagram: loading || !profile.instagram ? "" : profile.instagram,
       linkedin: loading || !profile.linkedin ? "" : profile.linkedin
     });
-  }, [loading]);
+  }, [
+    loading,
+    getCurrentProfile,
+    profile.company,
+    profile.website,
+    profile.facebook,
+    profile.instagram,
+    profile.skills,
+    profile.twitter,
+    profile.status,
+    profile.location,
+    profile.linkedin,
+    profile.bio,
+    profile.githubusername,
+    profile.youtube
+  ]);
 
   const {
     company,
