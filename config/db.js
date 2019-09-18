@@ -11,7 +11,7 @@ const connectDB = async () => {
     });
     console.log("Mongo Connected!");
   } catch (err) {
-    console.log(err.message);
+    console.log(err.message, "Exit mongos");
     process.exit(1);
   }
 };
